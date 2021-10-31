@@ -1,0 +1,71 @@
+{% extends 'jariyo/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'jariyo/css/list.css' %}">
+<div class="container my-3 main">
+    <table class="table">
+        <thead>
+            <tr class="thead-dark">
+                <th>번호</th>
+                <th>가게이름</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if shop_list %}
+            {% for shop in shop_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>
+                    <a href="{% url 'jariyo:status' shop.id %}">{{ shop.name }}</a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="3">등록된 가게가 없습니다.</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <!-- 페이징처리 시작 -->
+    <div class="page-container">
+        <ul>
+            <!-- 이전페이지 -->
+            {% if shop_list.has_previous %}
+            <li class="item">
+                <button class="page-link" href="?page={{ shop_list.previous_page_number }}">이전</a>
+            </li>
+            {% else %}
+            <li class="item disabled">
+                <button class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+            </li>
+            {% endif %}
+            <!-- 페이지리스트 -->
+            {% for page_number in shop_list.paginator.page_range %}
+            {% if page_number >= shop_list.number|add:-5 and page_number <= shop_list.number|add:5 %}
+            {% if page_number == shop_list.number %}
+            <li class="item active" aria-current="page">
+                <button class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+            </li>
+            {% else %}
+            <li class="item">
+                <button class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+            </li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            <!-- 다음페이지 -->
+            {% if shop_list.has_next %}
+            <li class="page-item">
+                <button class="page-link" href="?page={{ shop_list.next_page_number }}">다음</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <button class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    <!-- 페이징처리 끝 -->
+</div>
+{% endblock %}

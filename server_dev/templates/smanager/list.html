@@ -1,0 +1,38 @@
+{% extends 'smanager/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'smanager/css/list.css' %}">
+{% if shop_list %}
+{% for shop in shop_list %}
+<div class="main-container">
+    <h1>{{ shop.name }}<br></h1>
+
+    <form method="post" class="post-form" action="{% url 'smanager:list' %}">
+        {% csrf_token %}
+        <input type="hidden" name="name" id="name" value="{{ shop.name }}">
+        <div class="row">
+            <label for="sit_over4">4인이상: {{ shop.sit_over4_max }} / </label>
+            <input type="text" name="sit_over4" id="sit_over4" value="{{ shop.sit_over4|default_if_none:'0' }}">
+        </div>
+        <div class="row">
+            <label for="sit_4">4인석: {{ shop.sit_4_max }} / </label>
+            <input type="text" name="sit_4" id="sit_4" value="{{ shop.sit_4|default_if_none:'0' }}">
+        </div>
+        <div class="row">
+            <label for="sit_2">2인석: {{ shop.sit_2_max }} / </label>
+            <input type="text" name="sit_2" id="sit_2" value="{{ shop.sit_2|default_if_none:'0' }}">
+        </div>
+        <div class="row">
+            <button type="submit">자리 정보 업데이트</button>
+        </div>
+    </form>
+
+    <a href="{% url 'smanager:update' shop.id %}">매장 정보 수정</a>
+    {% endfor %}
+    {% else %}매장이 없습니다.{% endif %}
+
+</div>
+
+
+
+{% endblock %}

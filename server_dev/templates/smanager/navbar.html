@@ -1,0 +1,64 @@
+<!-- 네비게이션바 -->
+{% load static %}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-menu-hamburger" onclick="openNav()"></span></a>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+        {% for page_number in shop_list.paginator.page_range %}
+            {% if page_number == shop_list.number %}
+            <li class="active"><a href="?page={{ page_number }}">{{ page_number }}<span class="sr-only">(current)</span></a></li>
+            {% else %}
+            <li><a href="?page={{ page_number }}">{{ page_number }}</a></li>
+            {% endif %}
+        {% endfor %}
+        <li><a href="{% url 'smanager:create' %}">+</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="glyphicon glyphicon-remove"></span></a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1 col-xs-2" id="div_profile_img">
+                {% if user.profile.profile_photo %}
+                    <img class="img-circle" id="profile_img" src="{{user.profile.profile_photo.url}}">
+                {% else %}
+                    <img class="img-circle" id="profile_img" src="{% static 'account/images/default_profile.png' %}">
+                {% endif %}
+            </div>
+            <div class="col-md-1 col-xs-4" id="profile_name">
+                <a href="{% url 'account:profile' user.pk %}">
+                    {% if user.profile.nickname %}
+                        {{ user.profile.nickname }}
+                    {% else %}
+                        {{ user.username }}
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </div>
+    <a href="{% url 'jariyo:main' %}"><span class="glyphicon glyphicon-home"></span> Home</a>
+    <a href="{% url 'jariyo:map' %}"><span class="glyphicon glyphicon-globe"></span> 지도</a>
+    <a href="{% url 'jariyo:restaurant' %}"><span class="glyphicon glyphicon-apple"></span> 음식점</a>
+    <a href="{% url 'jariyo:cafe' %}"><span class="glyphicon glyphicon-leaf"></span> 카페</a>
+
+    {% if user.profile.ismanager %}
+    <a href="{% url 'smanager:list' %}"><span class="glyphicon glyphicon-cog"></span> 매장 관리</a>
+    {% endif %}
+
+    <a href="{% url 'account:logout' %}" id="logout">로그아웃</a>
+</div>

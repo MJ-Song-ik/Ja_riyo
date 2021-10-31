@@ -1,0 +1,26 @@
+{% extends 'account/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'account/css/profile_update.css' %}">
+
+<h1>{{user.username}} Profile Update</h1>
+
+{% if error_msg %}
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+    <strong>Error</strong> {{error_msg}}
+</div>
+{% endif %}
+
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <div class="button-area">
+        <input type="submit" value="Update" class="btn">
+        <button onclick="history.back()" class="btn">Back</button>
+    </div>
+</form>
+</p>
+
+{% endblock %}

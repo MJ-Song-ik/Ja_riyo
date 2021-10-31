@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
+
+    <!-- base CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'smanager/css/navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'smanager/css/style.css' %}">
+    <title>자리요</title>
+
+</head>
+<body>
+    {% include "smanager/navbar.html" %}
+    <!-- Content -->
+    {% block content %}
+    {% endblock %}
+    <!-- Content -->
+
+    <!-- Script -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f2e1c9d8fb54a31e342c11719d5482d0&libraries=services"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/npm.js' %}"></script>
+    <script src="{% static 'smanager/js/navbar.js' %}"></script>
+    <!-- Script -->
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'jariyo/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'jariyo/css/status.css' %}">
+<div class="row">
+    <div class="shop-img">
+        {% if shop.main_photo %}
+        <img class="img-circle" src="{{ shop.main_photo.url }}" width="300px" height="300px"> <br>
+        {% else %}
+        <img class="img-circle" src="{% static 'jariyo/img/default_main_photo.png' %}" width="300px" height="300px"> <br>
+        {% endif %}
+    </div>
+
+    <div class="seat-list">
+        <h2>{{ shop.name }}</h2>
+        <ul>
+            <li><span class="head">4인 이상 : </span><span class="tail">{{ shop.sit_over4_max }} / {{ shop.sit_over4 }}</span></li>
+            <li><span class="head">4인석 : </span><span class="tail">{{ shop.sit_4_max }} / {{ shop.sit_4 }}</span></li>
+            <li><span class="head">2인석 : </span><span class="tail">{{ shop.sit_2_max }} / {{ shop.sit_2 }}</span></li>
+        </ul>
+    </div>
+    <button class="back-btn" onclick="back();">돌아가기</button>
+</div>
+
+
+<script>
+    const back = () => {
+        window.history.back();
+    }
+</script>
+{% endblock %}

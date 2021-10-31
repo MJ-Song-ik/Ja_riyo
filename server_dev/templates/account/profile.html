@@ -1,0 +1,36 @@
+{% extends 'account/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'account/css/profile.css' %}">
+<div class="row">
+    <div class="img-container">
+        {% if profile_user.profile.profile_photo %}
+        <img class="img-circle" src="{{profile_user.profile.profile_photo.url}}" width="300px" height="300px"> <br>
+        {% else %}
+        <img class="img-circle" src="{% static 'account/images/default_profile.png' %}" width="300px" height="300px"> <br>
+        {% endif %}
+    </div>
+
+    <div class="profile-container">
+        {% if profile_user.profile.nickname %}
+        <h2>{{profile_user.profile.nickname}}</h2>
+        {% endif %}
+        {% if user == profile_user %}   <!-- 로그인한 사용자와 profile_user(프로필 소유자)가 일치할 때만 프로필 편집이 가능하도록 함 -->
+        <a href="{% url 'account:profile_update' %}">
+            <button class="btn" type="button" class="btn btn-default">프로필 편집</button></a></h2>
+        {% endif %}
+        <h3> ID: {{profile_user.username}} <br>
+            {% if profile_user.first_name is not None %}
+            이름: {{profile_user.last_name}} {{profile_user.first_name}} <br>
+            {% endif %}
+        </h3>
+    </div>
+
+    <a class="btn" href="{% url 'jariyo:main' %}">메인으로</a>
+</div>
+
+{% if profile_user.ismanager %}
+<a class="btn" href="{% url 'smanager:list' %}">가게 관리창</a>
+{% endif %}
+
+{% endblock %}
