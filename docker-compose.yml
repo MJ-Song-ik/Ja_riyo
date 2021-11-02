@@ -23,4 +23,3 @@ services:
         volumes:
           - ./server_dev:/srv/docker-server
           - ./log:/var/log/uwsgi
-
