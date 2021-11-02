@@ -766,3 +766,7 @@ Not Found: /favicon.ico
 [pid: 8|app: 0|req: 41/41] 203.255.57.152 () {44 vars in 899 bytes} [Tue Nov  2 22:44:14 2021] GET /admin/login/?next=/admin/ => generated 1933 bytes in 31 msecs (HTTP/1.1 200) 8 headers in 431 bytes (1 switches on core 1)
 [pid: 8|app: 0|req: 42/42] 203.255.57.152 () {52 vars in 1123 bytes} [Tue Nov  2 22:44:19 2021] POST /admin/login/?next=/admin/ => generated 0 bytes in 201 msecs (HTTP/1.1 302) 10 headers in 595 bytes (1 switches on core 0)
 [pid: 8|app: 0|req: 43/43] 203.255.57.152 () {48 vars in 999 bytes} [Tue Nov  2 22:44:20 2021] GET /admin/ => generated 4421 bytes in 29 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 1)
+[pid: 8|app: 0|req: 44/44] 184.105.139.67 () {28 vars in 297 bytes} [Tue Nov  2 22:56:43 2021] GET / => generated 1911 bytes in 6 msecs (HTTP/1.1 200) 6 headers in 319 bytes (1 switches on core 0)
+[pid: 8|app: 0|req: 45/45] 176.53.221.213 () {36 vars in 516 bytes} [Tue Nov  2 22:57:28 2021] GET / => generated 1911 bytes in 6 msecs (HTTP/1.1 200) 6 headers in 319 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 8|app: 0|req: 46/46] 176.53.219.99 () {36 vars in 537 bytes} [Tue Nov  2 22:57:28 2021] GET /favicon.ico => generated 2412 bytes in 7 msecs (HTTP/1.1 404) 4 headers in 129 bytes (1 switches on core 0)
