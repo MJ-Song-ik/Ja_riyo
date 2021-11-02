@@ -103,3 +103,6 @@
 203.255.57.152 - - [02/Nov/2021:13:44:20 +0000] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331 "http://jariyo.kro.kr/static/admin/css/base.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"
 203.255.57.152 - - [02/Nov/2021:13:44:20 +0000] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380 "http://jariyo.kro.kr/static/admin/css/base.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"
 203.255.57.152 - - [02/Nov/2021:13:44:20 +0000] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184 "http://jariyo.kro.kr/static/admin/css/fonts.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"
+184.105.139.67 - - [02/Nov/2021:13:56:43 +0000] "GET / HTTP/1.1" 200 1911 "-" "-"
+176.53.221.213 - - [02/Nov/2021:13:57:28 +0000] "GET / HTTP/1.1" 200 890 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
+176.53.219.99 - - [02/Nov/2021:13:57:28 +0000] "GET /favicon.ico HTTP/1.1" 404 1016 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
