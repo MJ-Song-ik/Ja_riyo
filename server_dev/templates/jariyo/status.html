@@ -14,9 +14,10 @@
     <div class="seat-list">
         <h2>{{ shop.name }}</h2>
         <ul>
-            <li><span class="head">4인 이상 : </span><span class="tail">{{ shop.sit_over4_max }} / {{ shop.sit_over4 }}</span></li>
-            <li><span class="head">4인석 : </span><span class="tail">{{ shop.sit_4_max }} / {{ shop.sit_4 }}</span></li>
-            <li><span class="head">2인석 : </span><span class="tail">{{ shop.sit_2_max }} / {{ shop.sit_2 }}</span></li>
+            <li><span class="title_status">테이블 종류 : </span><span class="title_status">(사용중 / 총 자리수)</span></li>
+            <li><span class="head">4인 이상 : </span><span class="head">  &nbsp; {{ shop.sit_over4 }}&nbsp;  /&nbsp;  {{ shop.sit_over4_max }}</span></li>
+            <li><span class="head">4인석 : </span><span class="head"> &nbsp; {{ shop.sit_4 }}&nbsp;  /&nbsp;  {{ shop.sit_4_max }}</span></li>
+            <li><span class="head">2인석 : </span><span class="head"> &nbsp; {{ shop.sit_2 }}&nbsp;  /&nbsp;  {{ shop.sit_2_max }}</span></li>
         </ul>
     </div>
     <button class="back-btn" onclick="back();">돌아가기</button>

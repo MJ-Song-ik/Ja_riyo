@@ -44,7 +44,7 @@ h2{
     margin : auto;
     max-width: 100%;
     text-shadow: -2px 0 #ffffff, 0 2px #ffffff, 2px 0 #ffffff, 0 -2px #ffffff;
-	color: #ED6C69;
+   color: #ED6C69;
 }
 ul{
     list-style: none;
@@ -54,13 +54,21 @@ ul{
 
 }
 li{
+    padding: 0.5em;
+}
+.head{
     text-shadow: -2px 0 #ffffff, 0 2px #ffffff, 2px 0 #ffffff, 0 -2px #ffffff;
     font: bold 15px/20px sans-serif;
-	color: #ED6C69;
-	
-    padding: 0.5em;
-
+   color: #ED6C69;
 }
+
+.tail{
+    text-shadow: -2px 0 #ffffff, 0 2px #ffffff, 2px 0 #ffffff, 0 -2px #ffffff;
+    font: bold 15px/20px sans-serif;
+   color: #ED6C69;
+}
+
+
 .seat-list{
     margin : 0 auto;
     width:70%;
@@ -74,4 +82,9 @@ button{
     border: 1px;
     border-radius: 3px;
 
+}
+.title_status{
+   color: #a71f1d;
+    font: bold 17px/22px sans-serif;
+    text-shadow: -1.5px 0 #ffffff, 0 1.5px #ffffff, 1.5px 0 #ffffff, 0 -1.5px #ffffff;
 }

@@ -35,7 +35,7 @@ body {
     border-radius: 20px; 
     border-color: #FFD1B7;
 }
-.row button{
+.button_form_1{
     height: 30px; 
     background-color: rgb(83, 154, 236); 
     border: 1px; 
@@ -84,3 +84,13 @@ form {
     max-width: 100%;
 }
 
+.button_form_2{
+    background: #ffa7a3;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    text-align: center;
+     font: bold 15px/20px sans-serif;
+    color: #FFFFFF;
+    border-color: #ffa7a3 
+ }

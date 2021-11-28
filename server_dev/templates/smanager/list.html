@@ -11,19 +11,31 @@
         {% csrf_token %}
         <input type="hidden" name="name" id="name" value="{{ shop.name }}">
         <div class="row">
-            <label for="sit_over4">4인이상: {{ shop.sit_over4_max }} / </label>
-            <input type="text" name="sit_over4" id="sit_over4" value="{{ shop.sit_over4|default_if_none:'0' }}">
+            <label for="sit_over4">4인이상:
+                <button class="button_form_2" onclick='count("minus" , "sit_over4")'>-</button>
+                <input type="text" name="sit_over4" id="sit_over4" value="{{ shop.sit_over4|default_if_none:'0' }}">
+                <button class="button_form_2" onclick='count("plus" , "sit_over4")'>+</button>
+                 / {{ shop.sit_over4_max }}
+            </label>
         </div>
         <div class="row">
-            <label for="sit_4">4인석: {{ shop.sit_4_max }} / </label>
-            <input type="text" name="sit_4" id="sit_4" value="{{ shop.sit_4|default_if_none:'0' }}">
+            <label for="sit_4">4인석: 
+                <button class="button_form_2" onclick='count("minus" , "sit_4")'>-</button>
+                <input type="text" name="sit_4" id="sit_4" value="{{ shop.sit_4|default_if_none:'0' }}">
+                <button class="button_form_2" onclick='count("plus" , "sit_4")'>+</button>
+                 / {{ shop.sit_4_max }} 
+            </label>
         </div>
         <div class="row">
-            <label for="sit_2">2인석: {{ shop.sit_2_max }} / </label>
-            <input type="text" name="sit_2" id="sit_2" value="{{ shop.sit_2|default_if_none:'0' }}">
+            <label for="sit_2">2인석: 
+                <button class="button_form_2" onclick='count("minus" , "sit_2")'>-</button>
+                <input type="text" name="sit_2" id="sit_2" value="{{ shop.sit_2|default_if_none:'0' }}">
+                <button class="button_form_2" onclick='count("plus" , "sit_2")'>+</button>
+                 / {{ shop.sit_2_max }}</label>
+
         </div>
         <div class="row">
-            <button type="submit">자리 정보 업데이트</button>
+            <button type="submit" class="button_form_1">자리 정보 업데이트</button>
         </div>
     </form>
 
@@ -32,7 +44,5 @@
     {% else %}매장이 없습니다.{% endif %}
 
 </div>
-
-
 
 {% endblock %}
