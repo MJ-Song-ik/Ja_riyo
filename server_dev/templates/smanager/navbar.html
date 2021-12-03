@@ -54,7 +54,6 @@
     <a href="{% url 'jariyo:main' %}"><span class="glyphicon glyphicon-home"></span> Home</a>
     <a href="{% url 'jariyo:map' %}"><span class="glyphicon glyphicon-globe"></span> 지도</a>
     <a href="{% url 'jariyo:restaurant' %}"><span class="glyphicon glyphicon-apple"></span> 음식점</a>
-    <a href="{% url 'jariyo:cafe' %}"><span class="glyphicon glyphicon-leaf"></span> 카페</a>
 
     {% if user.profile.ismanager %}
     <a href="{% url 'smanager:list' %}"><span class="glyphicon glyphicon-cog"></span> 매장 관리</a>
