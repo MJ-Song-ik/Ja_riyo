@@ -41,7 +41,7 @@ class ShopView(View):
             user = get_object_or_404(User, pk=request.user.pk)
             if user.profile.ismanager:
                 shop_list = user.shop_set.all()
-                page = int(request.GET.get('page'))
+                page = request.GET.get('page')
                 paginator = Paginator(shop_list, 1)
                 page_obj = paginator.get_page(page)
                 context = {'shop_list': page_obj}

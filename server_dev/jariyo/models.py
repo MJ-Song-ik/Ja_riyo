@@ -8,7 +8,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Shop(models.Model):
     SHOP_TYPES = [
         ('R', 'Restaurant'),
-        ('C', 'Cafe'),
     ]
     manager = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)

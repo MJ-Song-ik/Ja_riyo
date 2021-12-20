@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'jariyo/base.html' %}
 {% block content %}
 {% load static %}
 <div class="container">
@@ -7,10 +7,13 @@
     </div>
     <div class="row">
         <a href="{% url 'jariyo:map' %}">
-            <img class="icon" src="{% static 'jariyo/img/food.png' %}" alt="지도">
+            <img class="icon" src="{% static 'jariyo/img/map.png' %}" alt="지도">
         </a>
     </div>
     <div class="row">
+        <a href="{% url 'jariyo:restaurant' %}">
+            <img class="icon" src="{% static 'jariyo/img/food.png' %}" alt="음식점">
+        </a>
         {% if user.profile.ismanager %}
         <a href="{% url 'smanager:list' %}">
             <img class="icon" src="{% static 'jariyo/img/seat.png' %}" alt="좌석 갱신">
